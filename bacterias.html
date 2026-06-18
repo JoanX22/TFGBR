@@ -1,0 +1,101 @@
+cat > /opt/infdemic/frontend/bacterias.html <<'EOF'
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>INFDEMIC - Bacterias</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>INFDEMIC</h1>
+    <p>Consulta de bacterias</p>
+</header>
+
+<div class="barra-sesion">
+    <span id="nombreUsuario"></span>
+
+    <button
+        type="button"
+        id="btnCerrarSesion"
+    >
+        Cerrar sesión
+    </button>
+</div>
+
+<nav>
+    <a
+        class="boton-menu"
+        href="index.html"
+        data-roles="medico"
+    >
+        Casos clínicos
+    </a>
+
+    <a
+        class="boton-menu activo"
+        href="bacterias.html"
+        data-roles="medico,investigador"
+    >
+        Bacterias
+    </a>
+
+    <a
+        class="boton-menu"
+        href="resistencias.html"
+        data-roles="medico,investigador"
+    >
+        Resistencias
+    </a>
+
+    <a
+        class="boton-menu"
+        href="investigador.html"
+        data-roles="investigador"
+    >
+        Añadir datos
+    </a>
+</nav>
+
+<main>
+    <section class="card">
+        <h2>Bacterias registradas</h2>
+
+        <div class="aviso">
+            Esta sección muestra las bacterias registradas,
+            su familia, descripción y resistencias asociadas.
+        </div>
+
+        <button
+            type="button"
+            id="btnBacterias"
+        >
+            Consultar bacterias
+        </button>
+
+        <div id="tablaBacterias"></div>
+    </section>
+</main>
+
+<footer>
+    <p>
+        Demo académica INFDEMIC -
+        Datos ficticios
+    </p>
+</footer>
+
+<script src="auth.js?v=40"></script>
+<script src="bacterias.js?v=40"></script>
+
+</body>
+</html>
+EOF
